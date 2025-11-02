@@ -1,0 +1,9 @@
+await Voting.addCandidate("Alice");
+console.log(await signer.getAddress());
+const [signer] = await ethers.getSigners();
+await Voting.admin()
+(await Voting.phase()).toString()
+await Voting.admin()
+(await Voting.phase()).toString()
+await Voting.startRegistration();
+const Voting = await ethers.getContractAt("Voting", "0x5FbDB2315678afecb367f032d93F642f64180aa3");
