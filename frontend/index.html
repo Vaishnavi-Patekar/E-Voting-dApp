@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>E-Voting dApp (Local)</title>
+  <script src="https://cdn.jsdelivr.net/npm/ethers@6.6.0/dist/ethers.umd.min.js"></script>
+</head>
+<body style="font-family: Arial; text-align: center; padding: 20px;">
+  <h1>🗳️ E-Voting dApp (No MetaMask)</h1>
+
+  <input id="candidateName" placeholder="Enter Candidate Name" />
+  <button onclick="addCandidate()">Add Candidate</button>
+  <br><br>
+  <button onclick="showCandidates()">Show Candidates</button>
+
+  <h3>Candidates:</h3>
+  <ul id="candidateList"></ul>
+
+  <script>
+    // ======== CONFIG ========
+    const CONTRACT_ADDRESS = "0x5FbDB2315678afecb367f032d93F642f64180aa3"; // deployed address
+    const PRIVATE_KEY = "0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80"; // from Hardhat
+    const PROVIDER_URL = "http://127.0.0.1:8545";
+
+    // ======== ABI (copy from your Voting.json or compile output) ========
+    const ABI = [
+      "function addCandidate(string memory _name) public",
+      "function getAllCandidates() public view returns (tuple(uint id, string name, uint voteCount)[])"
+    ];
+
+    // ======== CONNECT TO NETWORK ========
+    const provider = new ethers.JsonRpcProvider(PROVIDER_URL);
+    const wallet = new ethers.Wallet(PRIVATE_KEY, provider);
+    const contract = new ethers.Contract(CONTRACT_ADDRESS, ABI, wallet);
+
+    async function addCandidate() {
+      const name = document.getElementById("candidateName").value.trim();
+      if (!name) return alert("Enter a candidate name!");
+      const tx = await contract.addCandidate(name);
+      await tx.wait();
+      alert("✅ Candidate added successfully!");
+      document.getElementById("candidateName").value = "";
+    }
+
+    // async function showCandidates() {
+    //   const candidates = await contract.getAllCandidates();
+    //   const list = document.getElementById("candidateList");
+    //   list.innerHTML = "";
+    //   candidates.forEach(c => {
+    //     const li = document.createElement("li");
+    //     li.textContent = `${c.name} (${c.voteCount} votes)`;
+    //     list.appendChild(li);
+    //   });
+    // }
+    async function showCandidates() {
+  try {
+    const candidates = await contract.getAllCandidates();
+    console.log("Candidates:", candidates);
+    const list = document.getElementById("candidateList");
+    list.innerHTML = "";
+    candidates.forEach(c => {
+      const li = document.createElement("li");
+      li.textContent = `${c.name} (${c.voteCount} votes)`;
+      list.appendChild(li);
+    });
+  } catch (err) {
+    console.error("Error fetching candidates:", err);
+    alert("Failed to load candidates — check console");
+  }
+}
+
+  </script>
+</body>
+</html>
