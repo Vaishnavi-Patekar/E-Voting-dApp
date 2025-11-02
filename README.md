@@ -24,31 +24,48 @@ A decentralized voting application built using **Solidity**, **Hardhat**, and **
 
 
 1️⃣ Clone the Repository
+```bash
 git clone https://github.com/<your-username>/E-Voting-dApp.git
 cd E-Voting-dApp
 
+```
 2️⃣ Install Dependencies
+
+```
 npm install
 
+```
 3️⃣ Start Hardhat Local Blockchain
+
+```
 npx hardhat node
 
+```
+
 4️⃣ Deploy the Smart Contract
+
+```
 npx hardhat run scripts/deploy.js --network localhost
 
+```
+
 5️⃣ Start the React App
+
+```
 cd client
 npm start
+
+```
 
 ---
 
 
 ##🔑 Configuration
 
-Create a config.js file inside your React project folder (/src) and add the following:
-
-export const PROVIDER_URL = "http://127.0.0.1:8545";
-export const PRIVATE_KEY = "<your-private-key>";
-export const CONTRACT_ADDRESS = "<deployed-contract-address>";
+- Create a config.js file inside your React project folder (/src) and add the following:
+ 
+- export const PROVIDER_URL = "http://127.0.0.1:8545";
+- export const PRIVATE_KEY = "<your-private-key>";
+- export const CONTRACT_ADDRESS = "<deployed-contract-address>";
 
 ✅ Replace <your-private-key> and <deployed-contract-address> with your actual values.
