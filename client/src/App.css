@@ -1,0 +1,148 @@
+body {
+  background: linear-gradient(135deg, #f0f4ff, #e1ecff);
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* 🔹 Navbar */
+.navbar {
+  background-color: #2b4eff;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.nav-right {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.phase-tag {
+  background-color: #ffffff22;
+  padding: 6px 12px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+}
+
+.wallet-tag {
+  background-color: #ffffff22;
+  padding: 6px 12px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+}
+
+/* 🔹 App Layout */
+.app-container {
+  text-align: center;
+  color: #222;
+}
+
+.content {
+  margin-top: 40px;
+  padding: 20px;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  color: #2b4eff;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 2px #ccc;
+}
+
+/* 🔹 Input & Buttons */
+.input-section {
+  margin-bottom: 20px;
+}
+
+.input-box {
+  padding: 10px;
+  width: 250px;
+  border-radius: 8px;
+  border: 2px solid #2b4eff;
+  outline: none;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.input-box:focus {
+  border-color: #1e2bbd;
+  box-shadow: 0 0 5px rgba(43, 78, 255, 0.5);
+}
+
+.btn {
+  background-color: #2b4eff;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  margin: 10px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #1e2bbd;
+}
+
+.add-btn {
+  background-color: #4caf50;
+}
+
+.add-btn:hover {
+  background-color: #3c9e40;
+}
+
+.show-btn {
+  background-color: #007bff;
+}
+
+.show-btn:hover {
+  background-color: #0069d9;
+}
+
+/* 🔹 Candidate List */
+.subheading {
+  margin-top: 40px;
+  font-size: 1.5rem;
+  color: #333;
+  text-decoration: underline;
+}
+
+.candidate-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.candidate-item {
+  background: white;
+  margin: 10px auto;
+  padding: 12px 20px;
+  border-radius: 12px;
+  width: 300px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.candidate-name {
+  font-weight: 600;
+  color: #444;
+}
+
+.candidate-votes {
+  color: #555;
+  font-size: 0.9rem;
+}
