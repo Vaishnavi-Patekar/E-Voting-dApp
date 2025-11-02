@@ -60,7 +60,7 @@ npm start
 ---
 
 
-##🔑 Configuration
+## 🔑 Configuration
 
 - Create a config.js file inside your React project folder (/src) and add the following:
  
