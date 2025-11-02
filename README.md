@@ -3,7 +3,7 @@
 A decentralized voting application built using **Solidity**, **Hardhat**, and **React.js** for secure and transparent blockchain-based elections.
 
 
-![E-Voting dApp Screenshot](client/public/images/Project Screenshot.png)
+![E-Voting dApp Screenshot](client/public/images/ProjectScreenshot.png)
 
 
 ---
