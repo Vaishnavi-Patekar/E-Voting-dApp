@@ -5,6 +5,7 @@ A decentralized voting application built using **Solidity**, **Hardhat**, and **
 
 ![E-Voting dApp Screenshot](client/public/images/Project Screenshot.png)
 
+
 ---
 
 ## 🚀 Features
